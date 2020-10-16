@@ -3,7 +3,6 @@ import './Home.scss';
 
 import HeaderSection from './HeaderSection/HeaderSection'
 import MainSection from './MainSection/MainSection'
-import SidebarSection from './SidebarSection/SidebarSection'
 
 function Home() {
     return (
@@ -11,7 +10,6 @@ function Home() {
             <HeaderSection />
             <div className="main">
                 <MainSection />
-                <SidebarSection />
             </div>
         </div>
     );

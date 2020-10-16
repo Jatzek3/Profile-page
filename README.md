@@ -10,7 +10,8 @@ Project made as an recruitment task.
 - React
 - React Router
 - Redux
-- Redux-Form
+- Redux Form
+- Redux Dev Tools for Chrome
 - Typescript
 - Sass
 - BEM
