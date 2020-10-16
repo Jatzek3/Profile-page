@@ -4,11 +4,11 @@ import { Field, InjectedFormProps, reduxForm } from 'redux-form'
 
 interface Props { };
 
-const renderFields = () => (
-    <div>
-        <input type="text" />
-    </div>
-)
+// const renderFields = () => (
+//     <div>
+//         <input type="text" />
+//     </div>
+// )
 
 
 const MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) => {
@@ -17,12 +17,11 @@ const MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any)
 
     return (
         <form onSubmit={handleSubmit} noValidate={true}>
-
+            <label>userName</label>
             <Field
                 name="userName"
                 type="text"
-                component={renderFields}
-                label="Name *"
+                component="input"
                 placeHolder="Enter User Name"
             // normalize={name}
             />

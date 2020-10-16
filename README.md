@@ -7,8 +7,10 @@ Project made as an recruitment task.
 
 ## Technologies used
 
-- react
-- react-router
-- redux
-- redux-form
-- typescript
+- React
+- React Router
+- Redux
+- Redux-Form
+- Typescript
+- Sass
+- BEM
