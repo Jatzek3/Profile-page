@@ -22,7 +22,7 @@ const renderInput: React.FC = (field: any) => {
 }
 
 
-const MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) => {
+let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) => {
     const { handleSubmit, submitting } = props;
 
 
@@ -94,11 +94,12 @@ const MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any)
     );
 }
 
-const form = reduxForm<{}, Props>({
+let form = reduxForm<{}, Props>({
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: false,
     form: 'user',
     validate,
 })(MainSection);
+
 
 export default connect(null)(form);

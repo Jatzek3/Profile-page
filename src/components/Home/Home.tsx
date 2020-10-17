@@ -8,9 +8,7 @@ function Home() {
     return (
         <div>
             <HeaderSection />
-            <div className="main">
-                <MainSection />
-            </div>
+            <MainSection />
         </div>
     );
 }
