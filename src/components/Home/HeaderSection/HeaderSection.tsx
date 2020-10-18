@@ -17,7 +17,7 @@ let HeaderSection: any = (props: any) => {
             <img className="picture" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile" />
             <div className="info">
                 <h1><span>{firstNameValue}</span>
-                    <span>{lastNameValue}</span></h1>
+                    <span> {lastNameValue}</span></h1>
                 <p>{emailValue}</p>
                 <p>{titleValue}</p>
             </div>

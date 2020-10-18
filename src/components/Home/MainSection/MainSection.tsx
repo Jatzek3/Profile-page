@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, InjectedFormProps, reduxForm } from 'redux-form'
+import { nameNormalize, mobileNormalize } from './normalize'
 
-import showResults from './showResults'
 import validate from './validate';
 
 interface Props { };
@@ -20,6 +20,12 @@ const renderInput: React.FC = (field: any) => {
     )
 
 }
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
+async function showResults(values: any) {
+    await sleep(500) // simulate server latency
+    window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`)
+}
 
 
 let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) => {
@@ -28,14 +34,25 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
 
     return (
         <form onSubmit={handleSubmit(showResults)} noValidate={true}>
+
             <div>
                 <Field
-                    name="UserName"
+                    name="firstName"
                     type="text"
                     component={renderInput}
                     // placeHolder="Enter User Name"
-                    label="UserName"
-                //  normalize={name}
+                    label="First Name"
+                    normalize={nameNormalize}
+                />
+            </div>
+            <div>
+                <Field
+                    name="lastName"
+                    type="text"
+                    component={renderInput}
+                    // placeHolder="Enter User Name"
+                    label="Last Name"
+                    normalize={nameNormalize}
                 />
             </div>
             <div>
@@ -50,22 +67,12 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
             </div>
             <div>
                 <Field
-                    name="firstName"
+                    name="mobileNumber"
                     type="text"
                     component={renderInput}
                     // placeHolder="Enter User Name"
-                    label="First Name"
-                //  normalize={name}
-                />
-            </div>
-            <div>
-                <Field
-                    name="lastName"
-                    type="text"
-                    component={renderInput}
-                    // placeHolder="Enter User Name"
-                    label="Last Name"
-                //  normalize={name}
+                    label="Mobile"
+                    normalize={mobileNormalize}
                 />
             </div>
             <div>
@@ -73,7 +80,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
                     name="title"
                     type="text"
                     component={renderInput}
-                    placeHolder="Enter User Name"
+                    // placeHolder="Enter User Name"
                     label="Title"
                 //  normalize={name}
                 />
@@ -83,7 +90,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
                     name="language"
                     type="text"
                     component={renderInput}
-                    placeHolder="Enter User Name"
+                    // placeHolder="Enter User Name"
                     label="Language"
                 //  normalize={name}
                 />
