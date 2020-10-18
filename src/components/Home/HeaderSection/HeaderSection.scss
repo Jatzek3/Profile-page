@@ -5,5 +5,20 @@ header{
 }
 
 .picture{
-    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    input{
+        display: none;
+    }
+    &__input{
+
+            height: 150px;
+            width: 150px;
+            border: 1px dashed black;
+            img{
+                position: absolute;
+            }
+    }
 }

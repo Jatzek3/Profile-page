@@ -12,9 +12,38 @@ let HeaderSection: any = (props: any) => {
         emailValue,
         titleValue,
     } = props;
+
+    const uploadedImage: any = React.useRef(null);
+    const imageUploader: any = React.useRef(null);
+
+    const handleImageUpload = (e: any) => {
+        const [file] = e.target.files;
+        if (file) {
+            const reader: any = new FileReader();
+            uploadedImage.current.file = file;
+            reader.onload = (e: any) => {
+                uploadedImage.current.src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    };
+
     return (
         <header>
-            <img className="picture" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile" />
+            <div className="picture">
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    ref={imageUploader} />
+                <div
+                    className="picture__input"
+                    onClick={() => imageUploader.current.click()}>
+                    <img alt="" ref={uploadedImage} />
+                </div>
+      Click to upload Image
+    </div>
+
             <div className="info">
                 <h1><span>{firstNameValue}</span>
                     <span> {lastNameValue}</span></h1>
@@ -22,6 +51,7 @@ let HeaderSection: any = (props: any) => {
                 <p>{titleValue}</p>
             </div>
         </header>
+
     );
 }
 
