@@ -2,24 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, InjectedFormProps, reduxForm } from 'redux-form'
 import { nameNormalize, mobileNormalize } from './normalize'
+import { Gender } from './gender'
+import { formInputTemplate, formSelectTemplate } from './templates'
+
 
 import validate from './validate';
 
 interface Props { };
 
 
-const renderInput: React.FC = (field: any) => {
-    return (
-        <div>
-            <label>{field.label}</label>
-            <input
-                {...field.input}
-            />
-            {field.meta.touched && <p /*className="text-danger"*/>{field.meta.error}</p>}
-        </div>
-    )
 
-}
+
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 async function showResults(values: any) {
@@ -39,7 +32,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
                 <Field
                     name="firstName"
                     type="text"
-                    component={renderInput}
+                    component={formInputTemplate}
                     // placeHolder="Enter User Name"
                     label="First Name"
                     normalize={nameNormalize}
@@ -49,7 +42,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
                 <Field
                     name="lastName"
                     type="text"
-                    component={renderInput}
+                    component={formInputTemplate}
                     // placeHolder="Enter User Name"
                     label="Last Name"
                     normalize={nameNormalize}
@@ -57,19 +50,28 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
             </div>
             <div>
                 <Field
+                    name="userGender"
+                    type="text"
+                    datas={Gender}
+                    component={formSelectTemplate}
+                    label="Gender"
+                    placeHolder="Select Gender"
+                />
+            </div>
+            <div>
+                <Field
                     name="email"
                     type="text"
-                    component={renderInput}
+                    component={formInputTemplate}
                     // placeHolder="Enter User Name"
                     label="Email"
-                //  normalize={name}
                 />
             </div>
             <div>
                 <Field
                     name="mobileNumber"
                     type="text"
-                    component={renderInput}
+                    component={formInputTemplate}
                     // placeHolder="Enter User Name"
                     label="Mobile"
                     normalize={mobileNormalize}
@@ -79,7 +81,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
                 <Field
                     name="title"
                     type="text"
-                    component={renderInput}
+                    component={formInputTemplate}
                     // placeHolder="Enter User Name"
                     label="Title"
                 //  normalize={name}
@@ -89,10 +91,9 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
                 <Field
                     name="language"
                     type="text"
-                    component={renderInput}
+                    component={formInputTemplate}
                     // placeHolder="Enter User Name"
                     label="Language"
-                //  normalize={name}
                 />
             </div>
             <button type='submit' disabled={submitting}>Submit</button>

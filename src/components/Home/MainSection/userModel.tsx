@@ -3,6 +3,5 @@ export interface AddUserParams {
     lastName: string;
     email: string;
     title: string;
-    language: string;
     mobileNumber: string;
 }
