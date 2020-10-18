@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './Home.scss';
 
 import HeaderSection from './HeaderSection/HeaderSection'
@@ -6,10 +6,10 @@ import MainSection from './MainSection/MainSection'
 
 function Home() {
     return (
-        <div>
+        <Fragment>
             <HeaderSection />
             <MainSection />
-        </div>
+        </Fragment>
     );
 }
 

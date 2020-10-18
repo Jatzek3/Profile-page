@@ -1,17 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, InjectedFormProps, reduxForm } from 'redux-form'
-import { nameNormalize, mobileNormalize } from './normalize'
-import { Gender } from './gender'
-import { formInputTemplate, formSelectTemplate } from './templates'
+import { nameNormalize, mobileNormalize } from '../../../resources/normalize'
+import { Gender } from '../../../resources/gender'
+import { formInputTemplate, formSelectTemplate } from '../../../resources/templates'
 
 
-import validate from './validate';
+import validate from '../../../resources/validate';
 
 interface Props { };
-
-
-
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -31,9 +28,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
             <div>
                 <Field
                     name="firstName"
-                    type="text"
                     component={formInputTemplate}
-                    // placeHolder="Enter User Name"
                     label="First Name"
                     normalize={nameNormalize}
                 />
@@ -41,61 +36,43 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
             <div>
                 <Field
                     name="lastName"
-                    type="text"
                     component={formInputTemplate}
-                    // placeHolder="Enter User Name"
                     label="Last Name"
                     normalize={nameNormalize}
                 />
             </div>
             <div>
                 <Field
+                    name="title"
+                    component={formInputTemplate}
+                    label="Job Title"
+                    normalize={nameNormalize}
+                />
+            </div>
+            <div>
+                <Field
                     name="userGender"
-                    type="text"
                     datas={Gender}
                     component={formSelectTemplate}
                     label="Gender"
-                    placeHolder="Select Gender"
                 />
             </div>
             <div>
                 <Field
                     name="email"
-                    type="text"
                     component={formInputTemplate}
-                    // placeHolder="Enter User Name"
                     label="Email"
                 />
             </div>
             <div>
                 <Field
                     name="mobileNumber"
-                    type="text"
                     component={formInputTemplate}
-                    // placeHolder="Enter User Name"
                     label="Mobile"
                     normalize={mobileNormalize}
                 />
             </div>
-            <div>
-                <Field
-                    name="title"
-                    type="text"
-                    component={formInputTemplate}
-                    // placeHolder="Enter User Name"
-                    label="Title"
-                //  normalize={name}
-                />
-            </div>
-            <div>
-                <Field
-                    name="language"
-                    type="text"
-                    component={formInputTemplate}
-                    // placeHolder="Enter User Name"
-                    label="Language"
-                />
-            </div>
+
             <button type='submit' disabled={submitting}>Submit</button>
 
         </form>
