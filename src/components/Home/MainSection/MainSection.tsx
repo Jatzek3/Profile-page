@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, InjectedFormProps, reduxForm } from 'redux-form'
-import { nameNormalize, mobileNormalize } from '../../../resources/normalize'
-import { Gender } from '../../../resources/gender'
-import { formInputTemplate, formSelectTemplate } from '../../../resources/templates'
+import { nameNormalize, mobileNormalize } from './resources/normalize'
+import { Gender } from './resources/gender'
+import { formInputTemplate, formSelectTemplate } from './resources/templates'
+import { Button } from 'reactstrap'
 
 
-import validate from '../../../resources/validate';
+import validate from './resources/validate';
 
 interface Props { };
 
@@ -73,7 +74,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
                 />
             </div>
 
-            <button type='submit' disabled={submitting}>Submit</button>
+            <Button type="submit" color="success" disabled={submitting}>Submit</Button>
 
         </form>
     );
