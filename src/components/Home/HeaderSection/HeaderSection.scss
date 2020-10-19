@@ -9,6 +9,8 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 3em;
+    margin-left: 3em;
     input{
         display: none;
     }
@@ -22,5 +24,18 @@ header{
                 height: 150px;
                 width: 150px;
             }
+    }
+}
+.info{
+    margin-top: 2.5em;
+    margin-left: 2em;
+    :first-child{
+        font-size: 3em;
+        font-weight: 600;
+    }
+  &__email{
+      font-style: italic;
+      font-size: 1em;
+
     }
 }

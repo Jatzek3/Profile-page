@@ -5,18 +5,14 @@ import { nameNormalize, mobileNormalize } from './resources/normalize'
 import { Gender } from './resources/gender'
 import { formInputTemplate, formSelectTemplate } from './resources/templates'
 import { Button } from 'reactstrap'
+import showResults from './resources/showResults'
+import './MainSection.scss'
 
 
 import validate from './resources/validate';
 
 interface Props { };
 
-const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
-
-async function showResults(values: any) {
-    await sleep(500) // simulate server latency
-    window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`)
-}
 
 
 let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) => {
@@ -25,57 +21,57 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
 
     return (
         <form onSubmit={handleSubmit(showResults)} noValidate={true}>
-
-            <div>
-                <Field
-                    name="firstName"
-                    component={formInputTemplate}
-                    label="First Name"
-                    normalize={nameNormalize}
-                />
-            </div>
-            <div>
-                <Field
-                    name="lastName"
-                    component={formInputTemplate}
-                    label="Last Name"
-                    normalize={nameNormalize}
-                />
-            </div>
-            <div>
-                <Field
-                    name="title"
-                    component={formInputTemplate}
-                    label="Job Title"
-                    normalize={nameNormalize}
-                />
-            </div>
-            <div>
-                <Field
-                    name="userGender"
-                    datas={Gender}
-                    component={formSelectTemplate}
-                    label="Gender"
-                />
-            </div>
-            <div>
-                <Field
-                    name="email"
-                    component={formInputTemplate}
-                    label="Email"
-                />
-            </div>
-            <div>
-                <Field
-                    name="mobileNumber"
-                    component={formInputTemplate}
-                    label="Mobile"
-                    normalize={mobileNormalize}
-                />
+            <div className="input-wrapper">
+                <div >
+                    <Field
+                        name="firstName"
+                        component={formInputTemplate}
+                        label="First Name"
+                        normalize={nameNormalize}
+                    />
+                </div>
+                <div>
+                    <Field
+                        name="lastName"
+                        component={formInputTemplate}
+                        label="Last Name"
+                        normalize={nameNormalize}
+                    />
+                </div>
+                <div>
+                    <Field
+                        name="title"
+                        component={formInputTemplate}
+                        label="Job Title"
+                        normalize={nameNormalize}
+                    />
+                </div>
+                <div>
+                    <Field
+                        name="userGender"
+                        datas={Gender}
+                        component={formSelectTemplate}
+                        label="Gender"
+                    />
+                </div>
+                <div>
+                    <Field
+                        name="email"
+                        component={formInputTemplate}
+                        label="Email"
+                    />
+                </div>
+                <div>
+                    <Field
+                        name="mobileNumber"
+                        component={formInputTemplate}
+                        label="Mobile"
+                        normalize={mobileNormalize}
+                    />
+                </div>
             </div>
 
             <Button type="submit" color="success" disabled={submitting}>Submit</Button>
-
         </form>
     );
 }

@@ -43,14 +43,13 @@ let HeaderSection: any = (props: any) => {
                     onClick={() => imageUploader.current.click()}>
                     <img alt="" ref={uploadedImage} />
                 </div>
-      Click to upload Image
-    </div>
+                <p>Click to upload Image</p>
+            </div>
 
             <div className="info">
-                <h1><span>{firstNameValue}</span>
-                    <span> {lastNameValue}</span></h1>
-                <p>{emailValue}</p>
+                <p>{firstNameValue} {lastNameValue}</p>
                 <p>{titleValue}</p>
+                <p className="info__email">{emailValue}</p>
             </div>
         </header>
 
