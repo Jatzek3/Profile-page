@@ -1,7 +1,7 @@
- Work in progress
+# Profile page Aplication
 
-# Profile page
-
+The name speaks for itself. It may not look like much but it's an Iceberg.
+Aplication created as an recruitment task.
 During development of the project my main sources of knowledge and inspiration were:
 
 1. A practical guide to Redux Form - ERIK RASMUSSEN 

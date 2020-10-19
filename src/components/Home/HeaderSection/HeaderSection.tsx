@@ -47,9 +47,9 @@ let HeaderSection: any = (props: any) => {
             </div>
 
             <div className="info">
-                <p>{firstNameValue} {lastNameValue}</p>
-                <p>{titleValue}</p>
-                <p className="info__email">{emailValue}</p>
+                <p>{firstNameValue || "Your"} {lastNameValue || "Name"}</p>
+                <p>{titleValue || "Job Title"}</p>
+                <p className="info__email">{emailValue || "Email"}</p>
             </div>
         </header>
 
