@@ -6,6 +6,9 @@ import { formValueSelector } from 'redux-form';
 import './HeaderSection.scss';
 
 let HeaderSection: any = (props: any) => {
+    const uploadedImage: any = React.useRef(null);
+    const imageUploader: any = React.useRef(null);
+
     const {
         firstNameValue,
         lastNameValue,
@@ -13,8 +16,7 @@ let HeaderSection: any = (props: any) => {
         titleValue,
     } = props;
 
-    const uploadedImage: any = React.useRef(null);
-    const imageUploader: any = React.useRef(null);
+
 
     const handleImageUpload = (e: any) => {
         const [file] = e.target.files;

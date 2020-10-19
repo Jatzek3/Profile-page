@@ -2,16 +2,16 @@
 
 # Profile page
 
-During development of the project my main sources of knowledge and inspiration ware:
+During development of the project my main sources of knowledge and inspiration were:
 
-- A practical guide to Redux Form - ERIK RASMUSSEN 
-        - https://www.youtube.com/watch?v=ey7H8h4ERHg
-- Build a React + Redux App with TypeScript and Redux Form 
-        - https://levelup.gitconnected.com/react-js-typescript-redux-redux-form-jest-e522995ebe36
-- Redux Forms Documentation
-        - https://redux-form.com/8.3.0/
--Client-side image upload in React 
-        - https://dev.to/asimdahall/client-side-image-upload-in-react-5ffc
+1. A practical guide to Redux Form - ERIK RASMUSSEN 
+         https://www.youtube.com/watch?v=ey7H8h4ERHg
+2. Build a React + Redux App with TypeScript and Redux Form 
+         https://levelup.gitconnected.com/react-js-typescript-redux-redux-form-jest-e522995ebe36
+3. Redux Forms Documentation
+         https://redux-form.com/8.3.0/
+4. Client-side image upload in React 
+         https://dev.to/asimdahall/client-side-image-upload-in-react-5ffc
   
 
 ## Technologies used
@@ -24,3 +24,5 @@ During development of the project my main sources of knowledge and inspiration w
 - Typescript
 - Sass
 - BEM
+- Bootstrap
+- Reactstrap
