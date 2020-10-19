@@ -24,6 +24,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
             <div className="input-wrapper">
                 <div >
                     <Field
+                        value="Your"
                         name="firstName"
                         component={formInputTemplate}
                         label="First Name"
@@ -32,6 +33,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
                 </div>
                 <div>
                     <Field
+                        value="Name"
                         name="lastName"
                         component={formInputTemplate}
                         label="Last Name"
@@ -40,6 +42,7 @@ let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) =
                 </div>
                 <div>
                     <Field
+                        value="Title"
                         name="title"
                         component={formInputTemplate}
                         label="Job Title"
