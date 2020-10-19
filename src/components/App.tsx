@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.scss';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import Home from './Home/Home';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import Navigation from './Navigation/Navigation'
+
+import './App.scss';
 
 function App() {
   return (

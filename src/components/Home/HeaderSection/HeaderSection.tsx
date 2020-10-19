@@ -5,7 +5,7 @@ import { formValueSelector } from 'redux-form';
 
 import './HeaderSection.scss';
 
-let HeaderSection: any = (props: any) => {
+let HeaderSection: React.FC = (props: any) => {
     const uploadedImage: any = React.useRef(null);
     const imageUploader: any = React.useRef(null);
 

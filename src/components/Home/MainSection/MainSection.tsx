@@ -1,24 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, InjectedFormProps, reduxForm } from 'redux-form'
+import { Button } from 'reactstrap'
+
 import { nameNormalize, mobileNormalize } from './resources/normalize'
 import { Gender } from './resources/gender'
 import { formInputTemplate, formSelectTemplate } from './resources/templates'
-import { Button } from 'reactstrap'
 import showResults from './resources/showResults'
+import validate from './resources/validate';
+
 import './MainSection.scss'
 
 
-import validate from './resources/validate';
 
 interface Props { };
 
-
-
 let MainSection: React.FC<Props & InjectedFormProps<{}, Props>> = (props: any) => {
     const { handleSubmit, submitting } = props;
-
-
     return (
         <form onSubmit={handleSubmit(showResults)} noValidate={true}>
             <div className="input-wrapper">
