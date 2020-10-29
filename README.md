@@ -1,3 +1,5 @@
+ - Intersting Component -> https://github.com/Jatzek3/Profile-page/tree/main/src/components/Home/MainSection
+
 # Profile page Aplication
 
 The name speaks for itself. It may not look like much but it's an Iceberg. Aplication created as an recruitment task. 
